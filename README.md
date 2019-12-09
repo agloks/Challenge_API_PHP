@@ -41,7 +41,7 @@ php -S 127.0.0.1:8000
 
 ## Create Methods
 
-### Laboratorio
+### Product
 
 Create `Produto` calling route POST: http://localhost:8000/api/V1/product/create/ :
 
@@ -54,7 +54,7 @@ Create `Produto` calling route POST: http://localhost:8000/api/V1/product/create
  `categories`  | code of category on db                        | No
  `description`  | description product                         | No, <br> Default setting: `Empty`.
 
-### Exames
+### Category
 
 Create `Categorias` using calling route POST: http://localhost:8000/api/V1/categories/create/ :
 
@@ -66,7 +66,7 @@ Create `Categorias` using calling route POST: http://localhost:8000/api/V1/categ
 
 ## Remove Methods
 
-### Laboratorio
+### Product
 
 Remove any value in `Produto` calling route PATCH: http://localhost:8000/api/V1/product/remove/ :
 
@@ -79,7 +79,7 @@ Remove any value in `Produto` calling route PATCH: http://localhost:8000/api/V1/
  `categories`  | write as value = "remove"                       | No
  `description`  | write as value = "remove"                         | No
 
-### Exames
+### Category
 
 Remove any value in `Categorias` using calling route PATCH: http://localhost:8000/api/V1/categories/remove/ :
 
@@ -91,7 +91,7 @@ Remove any value in `Categorias` using calling route PATCH: http://localhost:800
 
 ## Update Methods
 
-### Laboratorio
+### Product
 
 Update any value in `Produto` calling route PUT: http://localhost:8000/api/V1/product/update/ :
 
@@ -104,7 +104,7 @@ Update any value in `Produto` calling route PUT: http://localhost:8000/api/V1/pr
  `categories`  | here is to add more categories to product                        | No
  `description`  | description product                         | No
 
-### Exames
+### Category
 
 Remove any value in `Categorias` calling route PUT: http://localhost:8000/api/V1/categories/update/ :
 
@@ -113,12 +113,10 @@ Remove any value in `Categorias` calling route PUT: http://localhost:8000/api/V1
  `name`       | category name.             | No
  `code`      | code of category don't is able to remove                           | **Yes**
 
- ## Update Methods
-
 
 ## Delete Methods
 
-### Laboratorio
+### Product
 
 Delete `Produto` calling route DELETE: http://localhost:8000/api/V1/product/delete/ :
 
@@ -126,7 +124,7 @@ Delete `Produto` calling route DELETE: http://localhost:8000/api/V1/product/dele
  ---|---|---
  `sku`      | product code sku.                            | **Yes**
 
-### Exames
+### Category
 
 Delete `Categorias` calling route DELETE: http://localhost:8000/api/V1/categories/delete/ :
 
@@ -138,7 +136,7 @@ Delete `Categorias` calling route DELETE: http://localhost:8000/api/V1/categorie
 ## Tests
 
 They were fully realized with shell script because don't need download anything, automating the call in api, and proving success of each route. 
-To execute test so need give permission for script and execute.
+To execute test, go to folder tests, so give permission for script and execute it.
 ``` 
 chmod +x test-routes.sh
 ./test-routes.sh <payload>
