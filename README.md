@@ -1,4 +1,4 @@
-# Backend RESTFul API
+# Backend REST API
 
 ## technologies
 
