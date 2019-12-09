@@ -2,52 +2,48 @@
 
 ## technologies
 
-- Node.js  
+- PHP7  
 
-- MongoDB
+- PDO
 
-- Docker
+- MySql
+
+- Javascript
 
 ## Dependencies
 
-- Mongoose 
+- MySql 
+
+- PDO
 
 ## Steps
  
 # Download and transfer project files
 
-### 1) Clone the repository, install node packages
+### 1) Clone the repository, first must create an user sql for our application
 
 ``` 
-git clone https://github.com/agloks/node-dck.git
-cd node-dck
-npm install
+git clone https://github.com/agloks/php-dck.git
+mysql -U <youruser> -p < sql_user.sql
 ```
 
-### 2) Make a folder to persist date of container, and give permission for script
+### 2) Then create our database and fill it with account was created at script above. (password is 123).
 
 ```
-mkdir ./data
-chmod +x mongo_docker.sh
+mysql -U challenge - p < sql_create.sql
 ```
 
-### 3) Up container
+### 3) Up server on port 8000 and at folder that contain the index.php.
 
 ```
-docker-compose up --build &
-```
-
-### 4) When container is up, go execute script
-
-```
-./mongo_docker.sh
+php -S 127.0.0.1:8000
 ```
 
 ## Create Methods
 
 ### Laboratorio
 
-Create `Produto` calling route POST: http://localhost:9000/api/V1/product/create/ :
+Create `Produto` calling route POST: http://localhost:8000/api/V1/product/create/ :
 
  Key| Description| Required
  ---|---|---
@@ -55,12 +51,12 @@ Create `Produto` calling route POST: http://localhost:9000/api/V1/product/create
  `sku`      | product code sku.                            | **Yes** , <br> Unique: `true`.
  `price`  | price product.                         | No, <br> Default setting: `0`.
  `quantity` | number of product.					| No, <br> Default setting: `0`.
- `categories`  | name of category on db                        | No
+ `categories`  | code of category on db                        | No
  `description`  | description product                         | No, <br> Default setting: `Empty`.
 
 ### Exames
 
-Create `Categorias` using calling route POST: http://localhost:9000/api/V1/categories/create/ :
+Create `Categorias` using calling route POST: http://localhost:8000/api/V1/categories/create/ :
 
  Key| Description| Required
  ---|---|---
@@ -72,7 +68,7 @@ Create `Categorias` using calling route POST: http://localhost:9000/api/V1/categ
 
 ### Laboratorio
 
-Remove any value in `Produto` calling route PATCH: http://localhost:9000/api/V1/product/remove/ :
+Remove any value in `Produto` calling route PATCH: http://localhost:8000/api/V1/product/remove/ :
 
  Key| Description| Required
  ---|---|---
@@ -85,7 +81,7 @@ Remove any value in `Produto` calling route PATCH: http://localhost:9000/api/V1/
 
 ### Exames
 
-Remove any value in `Categorias` using calling route PATCH: http://localhost:9000/api/V1/categories/remove/ :
+Remove any value in `Categorias` using calling route PATCH: http://localhost:8000/api/V1/categories/remove/ :
 
  Key| Description| Required
  ---|---|---
@@ -97,7 +93,7 @@ Remove any value in `Categorias` using calling route PATCH: http://localhost:900
 
 ### Laboratorio
 
-Update any value in `Produto` calling route PUT: http://localhost:9000/api/V1/product/update/ :
+Update any value in `Produto` calling route PUT: http://localhost:8000/api/V1/product/update/ :
 
  Key| Description| Required
  ---|---|---
@@ -110,7 +106,7 @@ Update any value in `Produto` calling route PUT: http://localhost:9000/api/V1/pr
 
 ### Exames
 
-Remove any value in `Categorias` calling route PUT: http://localhost:9000/api/V1/categories/update/ :
+Remove any value in `Categorias` calling route PUT: http://localhost:8000/api/V1/categories/update/ :
 
  Key| Description| Required
  ---|---|---
@@ -124,7 +120,7 @@ Remove any value in `Categorias` calling route PUT: http://localhost:9000/api/V1
 
 ### Laboratorio
 
-Delete `Produto` calling route DELETE: http://localhost:9000/api/V1/product/delete/ :
+Delete `Produto` calling route DELETE: http://localhost:8000/api/V1/product/delete/ :
 
  Key| Description| Required
  ---|---|---
@@ -132,7 +128,7 @@ Delete `Produto` calling route DELETE: http://localhost:9000/api/V1/product/dele
 
 ### Exames
 
-Delete `Categorias` calling route DELETE: http://localhost:9000/api/V1/categories/delete/ :
+Delete `Categorias` calling route DELETE: http://localhost:8000/api/V1/categories/delete/ :
 
  Key| Description| Required
  ---|---|---
