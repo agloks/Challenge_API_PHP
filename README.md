@@ -30,7 +30,7 @@ mysql -U <youruser> -p < sql_user.sql
 ### 2) Then create our database and fill it with account was created at script above. (password is 123).
 
 ```
-mysql -U challenge - p < sql_create.sql
+mysql -U challenge -p < sql_create.sql
 ```
 
 ### 3) Up server on port 8000 and at folder that contain the index.php.
